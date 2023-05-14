@@ -28,3 +28,7 @@ h{
 h4{
 	text-align: center;
 }
+
+.img-fluid{
+  max-width: 98% !important;
+}
