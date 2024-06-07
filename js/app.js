@@ -16,6 +16,7 @@ const observerBackground = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             const bgImage = getComputedStyle(entry.target).getPropertyValue('--bg-image');
             if (bgImage) {
+                console.log("ratio ta daronne");
                 // Fade to black
                 overlay.style.opacity = 1;
                 setTimeout(() => {
