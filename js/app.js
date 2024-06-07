@@ -5,13 +5,14 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
-            if(entry.intersectionRatio >= 0.5){
+            if (entry.intersectionRatio >= 0.5) {
                 const bgImage = getComputedStyle(entry.target).getPropertyValue('--bg-image');
-                if(bgImage){
-                    //fade in black 0.5s
+                if (bgImage) {
+                    // Fade to black
                     overlay.style.opacity = 1;
                     setTimeout(() => {
                         document.body.style.backgroundImage = bgImage;
+                        // Fade back to the content
                         overlay.style.opacity = 0;
                     }, 500);
                 }
@@ -20,7 +21,10 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.classList.remove('show');
         }
     });
+}, {
+    threshold: [0, 0.5, 1]
 });
+
 
 //add observer
 const hiddenElements = document.querySelectorAll('.hidden');
