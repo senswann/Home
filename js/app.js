@@ -14,15 +14,15 @@ const loadHTML = async (url, container) => {
 };
 
 // Load parts
-loadHTML('../section/header.html', contentDiv);
-loadHTML('../section/granmaggedon.html', contentDiv);
-loadHTML('../section/mm_noel.html', contentDiv);
-loadHTML('../section/test_tec_ue_2023.html', contentDiv);
-loadHTML('../section/P0rT4L.html', contentDiv);
-loadHTML('../section/openGL.html', contentDiv);
-loadHTML('../section/G3om3tryD4sh.html', contentDiv);
-loadHTML('../section/java.html', contentDiv);
-loadHTML('../section/footer.html', contentDiv);
+loadHTML('section/header.html', contentDiv);
+loadHTML('section/granmaggedon.html', contentDiv);
+loadHTML('section/mm_noel.html', contentDiv);
+loadHTML('section/test_tec_ue_2023.html', contentDiv);
+loadHTML('section/P0rT4L.html', contentDiv);
+loadHTML('section/openGL.html', contentDiv);
+loadHTML('section/G3om3tryD4sh.html', contentDiv);
+loadHTML('section/java.html', contentDiv);
+loadHTML('section/footer.html', contentDiv);
 
 //observer section function
 const observer = new IntersectionObserver((entries) => {
