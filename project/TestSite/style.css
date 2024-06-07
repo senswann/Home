@@ -44,7 +44,7 @@ section {
 }
 
 /* Define background images for each section */
-.section1 {
+.default {
     --bg-image: url('image1.jpg');
 }
 
