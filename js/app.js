@@ -5,24 +5,29 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
-            if (entry.intersectionRatio >= 0.75) {
-                const bgImage = getComputedStyle(entry.target).getPropertyValue('--bg-image');
-                if (bgImage) {
-                    // Fade to black
-                    overlay.style.opacity = 1;
-                    setTimeout(() => {
-                        document.body.style.backgroundImage = bgImage;
-                        // Fade back to the content
-                        overlay.style.opacity = 0;
-                    }, 500);
-                }
-            }
         } else {
             entry.target.classList.remove('show');
         }
     });
+});
+
+const observerBackground = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            const bgImage = getComputedStyle(entry.target).getPropertyValue('--bg-image');
+            if (bgImage) {
+                // Fade to black
+                overlay.style.opacity = 1;
+                setTimeout(() => {
+                    document.body.style.backgroundImage = bgImage;
+                    // Fade back to the content
+                    overlay.style.opacity = 0;
+                }, 500);
+            }
+        }
+    });
 }, {
-    threshold: [0, 0.5, 1]
+    threshold: [0.5] // Trigger when 50% of the section is visible
 });
 
 
