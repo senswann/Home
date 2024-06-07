@@ -6,14 +6,15 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
             const bgImage = getComputedStyle(entry.target).getPropertyValue('--bg-image');
-
-            //fade in black 1s
-            overlay.style.opacity = 1;
-            setTimeout(() => {
-                document.body.style.backgroundImage = bgImage;
-
-                overlay.style.opacity = 0;
-            }, 1000);
+            if(bgImage){
+                //fade in black 0.5s
+                overlay.style.opacity = 1;
+                setTimeout(() => {
+                    document.body.style.backgroundImage = bgImage;
+    
+                    overlay.style.opacity = 0;
+                }, 500);
+            }
         } else {
             entry.target.classList.remove('show');
         }
