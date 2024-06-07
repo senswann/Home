@@ -7,16 +7,13 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.classList.add('show');
             const bgImage = getComputedStyle(entry.target).getPropertyValue('--bg-image');
 
-            // Start the fade-to-black effect
+            //fade in black 1s
             overlay.style.opacity = 1;
-
-            // After the fade to black, change the background image
             setTimeout(() => {
                 document.body.style.backgroundImage = bgImage;
 
-                // Fade back to the new background image
                 overlay.style.opacity = 0;
-            }, 1000); // 1 second fade to black
+            }, 1000);
         } else {
             entry.target.classList.remove('show');
         }
