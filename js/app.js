@@ -6,10 +6,13 @@ const contentDiv = document.getElementById('content');
 const loadHTML = async (url, container) => {
     try {
         const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error('Erreur de chargement: ' + response.statusText);
+        }
         const text = await response.text();
         container.innerHTML += text;
     } catch (error) {
-        console.error('Error loading HTML:', error);
+        console.error('Erreur lors du chargement HTML:', error);
     }
 };
 
