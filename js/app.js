@@ -5,7 +5,7 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
-            if (entry.intersectionRatio >= 0.5) {
+            if (entry.intersectionRatio >= 0.25) {
                 const bgImage = getComputedStyle(entry.target).getPropertyValue('--bg-image');
                 if (bgImage) {
                     // Fade to black
@@ -29,17 +29,3 @@ const observer = new IntersectionObserver((entries) => {
 //add observer
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
-
-// Prevent widows
-const preventWidows = () => {
-    document.querySelectorAll('p').forEach(paragraph => {
-        const words = paragraph.innerHTML.split(' ');
-        if (words.length > 1) {
-            words[words.length - 2] += '&nbsp;' + words.pop();
-            paragraph.innerHTML = words.join(' ');
-        }
-    });
-};
-
-// Run preventWidows on DOM content loaded
-document.addEventListener('DOMContentLoaded', preventWidows);
