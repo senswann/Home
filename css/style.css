@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
-    background: url('default.jpg') no-repeat center center fixed;
+    background: url('../image/background/default.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #ffffff;
     font-family: 'Kanit', sans-serif;
@@ -45,29 +45,29 @@ section {
 
 /* Define background images for each section */
 .default {
-    --bg-image: url('default.jpg');
+    --bg-image: url('../image/background/default.jpg');
 }
 
 .GlobalGameJam{
-    --bg-image: url('ggj.jpg');
+    --bg-image: url('../image/background/ggj.jpg');
 }
 
 .UE {
-    --bg-image: url('unreal.jpg');
+    --bg-image: url('../image/background/unreal.jpg');
 }
 
 .Unity {
-    --bg-image: url('unity.jpg');
+    --bg-image: url('../image/background/unity.jpg');
 }
 
 .Java {
-    --bg-image: url('java.jpg');
+    --bg-image: url('../image/background/java.jpg');
 }
 
 .OpenGL {
-    --bg-image: url('OpenGL.jpg');
+    --bg-image: url('../image/background/OpenGL.jpg');
 }
 
 .MM_noel {
-    --bg-image: url('megaman_noel.jpg');
+    --bg-image: url('../image/background/megaman_noel.jpg');
 }
