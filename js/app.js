@@ -5,16 +5,16 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
-            const bgImage = getComputedStyle(entry.target).getPropertyValue('--bg-image');
-            if(bgImage){
-                //fade in black 0.5s
-                overlay.style.opacity = 1;
-                document.body.style.backgroundImage = bgImage;
-                setTimeout(() => {
-                    
-    
-                    overlay.style.opacity = 0;
-                }, 500);
+            if(entry.intersectionRatio >= 0.5){
+                const bgImage = getComputedStyle(entry.target).getPropertyValue('--bg-image');
+                if(bgImage){
+                    //fade in black 0.5s
+                    overlay.style.opacity = 1;
+                    setTimeout(() => {
+                        document.body.style.backgroundImage = bgImage;
+                        overlay.style.opacity = 0;
+                    }, 500);
+                }
             }
         } else {
             entry.target.classList.remove('show');

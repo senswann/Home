@@ -17,7 +17,7 @@ body {
         -2px 0px 0 black,
         0px 2px 0 black,
         0px -2px 0 black;
-    transition: background 0.5s ease;
+    transition: background 0.25s ease;
 }
 
 #overlay {
