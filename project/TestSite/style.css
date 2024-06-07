@@ -32,6 +32,13 @@ section {
     text-justify: inter-word;
 }
 
+p {
+    width: 80%; /* Adjust as necessary */
+    margin: auto;
+    text-align: justify;
+}
+
+/*Custom class*/
 .hidden {
     opacity: 0;
     filter: blur(5px);

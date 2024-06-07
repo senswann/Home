@@ -22,3 +22,17 @@ const observer = new IntersectionObserver((entries) => {
 
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
+
+// Prevent widows
+const preventWidows = () => {
+    document.querySelectorAll('p').forEach(paragraph => {
+        const words = paragraph.innerHTML.split(' ');
+        if (words.length > 1) {
+            words[words.length - 2] += '&nbsp;' + words.pop();
+            paragraph.innerHTML = words.join(' ');
+        }
+    });
+};
+
+// Run preventWidows on DOM content loaded
+document.addEventListener('DOMContentLoaded', preventWidows);
