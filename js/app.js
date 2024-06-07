@@ -15,7 +15,7 @@ const loadHTML = async (url, container) => {
 
 // Load parts
 loadHTML('section/header.html', contentDiv);
-loadHTML('section/granmaggedon.html', contentDiv);
+loadHTML('section/granmageddon.html', contentDiv);
 loadHTML('section/mm_noel.html', contentDiv);
 loadHTML('section/test_tec_ue_2023.html', contentDiv);
 loadHTML('section/P0rT4L.html', contentDiv);
