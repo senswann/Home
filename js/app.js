@@ -9,8 +9,9 @@ const observer = new IntersectionObserver((entries) => {
             if(bgImage){
                 //fade in black 0.5s
                 overlay.style.opacity = 1;
+                document.body.style.backgroundImage = bgImage;
                 setTimeout(() => {
-                    document.body.style.backgroundImage = bgImage;
+                    
     
                     overlay.style.opacity = 0;
                 }, 500);
