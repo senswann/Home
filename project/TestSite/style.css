@@ -1,45 +1,58 @@
 /* import font Kanit*/
+/* style.css */
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
-    background-color: #131316;
+    background: url('image1.jpg') no-repeat center center fixed;
+    background-size: cover;
     color: #ffffff;
     font-family: 'Kanit', sans-serif;
     padding: 0;
     margin: 0;
+    transition: background 1s ease; /* Smooth background transition */
 }
 
-section{
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
+}
+
+section {
     display: grid;
     place-items: center;
     align-content: center;
     min-height: 100vh;
 }
 
-
-/*class for transition*/
-.hidden{
+.hidden {
     opacity: 0;
     filter: blur(5px);
     transform: translateX(-100%);
     transition: all 1s;
 }
 
-.show{
+.show {
     opacity: 1;
     filter: blur(0);
     transform: translateX(0);
 }
 
-/* all background section define */
+/* Define background images for each section */
 .section1 {
-    --bg-color: #131316;
+    --bg-image: url('image1.jpg');
 }
 
 .section2 {
-    --bg-color: #ff7e5f;
+    --bg-image: url('image2.jpg');
 }
 
 .section3 {
-    --bg-color: #feb47b;
+    --bg-image: url('image3.png');
 }
