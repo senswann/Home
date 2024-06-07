@@ -24,6 +24,8 @@ body {
 }
 
 section {
+    padding: 10;
+    margin: 10;
     display: grid;
     place-items: center;
     align-content: center;
