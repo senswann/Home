@@ -5,7 +5,7 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
-            if (entry.intersectionRatio >= 0.25) {
+            if (entry.intersectionRatio >= 0.75) {
                 const bgImage = getComputedStyle(entry.target).getPropertyValue('--bg-image');
                 if (bgImage) {
                     // Fade to black
