@@ -35,6 +35,7 @@ section {
 p {
     width: 80%; /* Adjust as necessary */
     margin: auto;
+    align-content: center;
     text-align: justify;
 }
 
