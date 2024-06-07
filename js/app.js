@@ -1,6 +1,30 @@
 // app.js
 const overlay = document.getElementById('overlay');
+const contentDiv = document.getElementById('content');
 
+// load function
+const loadHTML = async (url, container) => {
+    try {
+        const response = await fetch(url);
+        const text = await response.text();
+        container.innerHTML += text;
+    } catch (error) {
+        console.error('Error loading HTML:', error);
+    }
+};
+
+// Load parts
+loadHTML('../section/header.html', contentDiv);
+loadHTML('../section/granmaggedon.html', contentDiv);
+loadHTML('../section/mm_noel.html', contentDiv);
+loadHTML('../section/test_tec_ue_2023.html', contentDiv);
+loadHTML('../section/P0rT4L.html', contentDiv);
+loadHTML('../section/openGL.html', contentDiv);
+loadHTML('../section/G3om3tryD4sh.html', contentDiv);
+loadHTML('../section/java.html', contentDiv);
+loadHTML('../section/footer.html', contentDiv);
+
+//observer section function
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -21,6 +45,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 });
 
+//add observer
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
 
