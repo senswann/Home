@@ -1,31 +1,4 @@
-// app.js
 const overlay = document.getElementById('overlay');
-const contentDiv = document.getElementById('content');
-
-// load function
-const loadHTML = async (url, container) => {
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error('Erreur de chargement: ' + response.statusText);
-        }
-        const text = await response.text();
-        container.innerHTML += text;
-    } catch (error) {
-        console.error('Erreur lors du chargement HTML:', error);
-    }
-};
-
-// Load parts
-loadHTML('section/header.html', contentDiv);
-loadHTML('section/granmageddon.html', contentDiv);
-loadHTML('section/mm_noel.html', contentDiv);
-loadHTML('section/test_tec_ue_2023.html', contentDiv);
-loadHTML('section/P0rT4L.html', contentDiv);
-loadHTML('section/openGL.html', contentDiv);
-loadHTML('section/G3om3tryD4sh.html', contentDiv);
-loadHTML('section/java.html', contentDiv);
-loadHTML('section/footer.html', contentDiv);
 
 //observer section function
 const observer = new IntersectionObserver((entries) => {
