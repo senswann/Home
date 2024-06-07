@@ -40,21 +40,21 @@ section {
 }
 
 /* custom link */
-link{
+a{
     color: #58b9fa;
     text-decoration: none;
 }
 
-link:hover {
+a:hover {
     color: #1e83c7;
     text-decoration: underline;
 }
 
-link:active {
+a:active {
     color: #1abc9c;
 }
 
-link:visited {
+a:visited {
     color: #1e83c7;
 }
 
