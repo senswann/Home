@@ -3,11 +3,15 @@ const sections = document.querySelectorAll('.section');
 
 // Preload all background images
 function preloadImages() {
-    sections.forEach(section => {
-        const bgImage = getComputedStyle(section).getPropertyValue('--bg-image').slice(5, -2);
-        const img = new Image();
-        img.src = bgImage;
-    });
+    return Promise.all(Array.from(sections).map(section => {
+        return new Promise((resolve) => {
+            const bgImage = getComputedStyle(section).getPropertyValue('--bg-image').slice(5, -2);
+            const img = new Image();
+            img.src = bgImage;
+            console.log(bgImage);
+            img.onload = resolve;
+        });
+    }));
 }
 document.addEventListener('DOMContentLoaded', preloadImages);
 
