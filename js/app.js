@@ -12,10 +12,8 @@ sections.push(document.querySelector('.MM_noel'));
 
 // Preload all background images
 function preloadImages(el) {
-    console.log("start preload");
     el.forEach(section => {
         const bgImage = getComputedStyle(section).getPropertyValue('--bg-image').slice(5, -2);
-        console.log("preload = "+bgImage);
         const img = new Image();
         img.src = bgImage;
     });
