@@ -28,7 +28,7 @@ const observerBackground = new IntersectionObserver((entries) => {
         }
     });
 }, {
-    threshold: [0.25] // Trigger when 25% of the section is visible
+    threshold: [0.15] // Trigger when 25% of the section is visible
 });
 
 
