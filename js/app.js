@@ -1,19 +1,27 @@
 const overlay = document.getElementById('overlay');
-const sections = document.querySelectorAll('.section');
+
+/* all section get */
+const sections= [];
+sections.push(document.querySelector('.default'));
+sections.push(document.querySelector('.GlobalGameJam'));
+sections.push(document.querySelector('.UE'));
+sections.push(document.querySelector('.Unity'));
+sections.push(document.querySelector('.Java'));
+sections.push(document.querySelector('.OpenGL'));
+sections.push(document.querySelector('.MM_noel'));
 
 // Preload all background images
-function preloadImages() {
-    return Promise.all(Array.from(sections).map(section => {
-        return new Promise((resolve) => {
-            const bgImage = getComputedStyle(section).getPropertyValue('--bg-image').slice(5, -2);
-            const img = new Image();
-            img.src = bgImage;
-            console.log(bgImage);
-            img.onload = resolve;
-        });
-    }));
+function preloadImages(el) {
+    console.log("start preload");
+    el.forEach(section => {
+        const bgImage = getComputedStyle(section).getPropertyValue('--bg-image').slice(5, -2);
+        console.log("preload = "+bgImage);
+        const img = new Image();
+        img.src = bgImage;
+    });
 }
-document.addEventListener('DOMContentLoaded', preloadImages);
+
+document.addEventListener('DOMContentLoaded', preloadImages(sections));
 
 //observer section function
 const observer = new IntersectionObserver((entries) => {
