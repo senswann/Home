@@ -1,4 +1,15 @@
 const overlay = document.getElementById('overlay');
+const sections = document.querySelectorAll('.section');
+
+// Preload all background images
+function preloadImages() {
+    sections.forEach(section => {
+        const bgImage = getComputedStyle(section).getPropertyValue('--bg-image').slice(5, -2);
+        const img = new Image();
+        img.src = bgImage;
+    });
+}
+document.addEventListener('DOMContentLoaded', preloadImages);
 
 //observer section function
 const observer = new IntersectionObserver((entries) => {
@@ -16,7 +27,6 @@ const observerBackground = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             const bgImage = getComputedStyle(entry.target).getPropertyValue('--bg-image');
             if (bgImage) {
-                console.log("ratio ta daronne");
                 // Fade to black
                 overlay.style.opacity = 1;
                 setTimeout(() => {
